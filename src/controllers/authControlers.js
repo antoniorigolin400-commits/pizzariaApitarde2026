@@ -11,7 +11,7 @@ export const login = async (req, res) => {
             return res.status(401).json({ message: "ceredenciais invalidas"});
          }
 
-         const senhavalida = await bcrypt.compare (senha, clientes.senha);
+         const senhavalida = await bcrypt.compare (senha, cliente.senha);
          if (!senhavalida) {
             return res.status(401).json({message: "credenciais ivalidas" });
         }
